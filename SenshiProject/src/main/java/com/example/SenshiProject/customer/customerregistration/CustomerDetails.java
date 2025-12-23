@@ -22,12 +22,15 @@ public class CustomerDetails
     private long mobileNumber;
     private LocalDate dob;
     private String address;
+
+    @Enumerated(EnumType.STRING)
     private CustomerStatus status;
+
     private LocalDateTime createdAt;
 
 
 //@OneToMany(mappedBy ="customerDetails")
-//    private AccountDetails accountDeatils;
+//    private AccountDetails account
 
 
 

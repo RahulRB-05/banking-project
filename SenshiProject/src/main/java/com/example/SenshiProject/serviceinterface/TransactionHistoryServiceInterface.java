@@ -10,9 +10,9 @@ public interface TransactionHistoryServiceInterface {
 
     void saveHistory(TransactionHistory transactionHistory);
 
-    List<TransactionHistory> getAllTransactions(Long accountId);
+    List<TransactionHistory> getAllTransactions(int  accountId);
 
-    List<TransactionHistory> getTransactionByType(Long accountId, TransactionType type);
+    List<TransactionHistory> getTransactionByType(int accountId, TransactionType type);
 
-    List<TransactionHistory> getTransactionsByDate(Long accountId, LocalDateTime from ,LocalDateTime to);
+    List<TransactionHistory> getTransactionsByDate(int accountId, LocalDateTime from ,LocalDateTime to);
 }

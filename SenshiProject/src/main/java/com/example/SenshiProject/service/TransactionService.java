@@ -120,8 +120,9 @@ public class TransactionService implements TransactionServiceInterface {
 
     private AccountResponseDTO mapToResponse(Account account) {
         return new AccountResponseDTO(
-                account.getAccount_id(),
+                account.getAccountId(),
                 account.getAccountNumber(),
+                account.getHolderName(),
                 account.getBalance(),
                 account.getStatus(),
                 account.getCreatedDate(),

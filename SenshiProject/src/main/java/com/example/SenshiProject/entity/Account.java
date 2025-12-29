@@ -16,7 +16,7 @@ import java.util.List;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer account_id;
+    private Integer accountId;
     private Long accountNumber;
     private String holderName;
     private Double balance;
@@ -26,7 +26,7 @@ public class Account {
     private LocalDateTime createdDate;
 
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "customer_id")
     private Customer customer;
 

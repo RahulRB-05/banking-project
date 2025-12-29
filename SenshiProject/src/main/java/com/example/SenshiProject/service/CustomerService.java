@@ -107,7 +107,7 @@ import java.util.List;
 
             CustomerResponseDTO response  = new CustomerResponseDTO();
 
-            response.setCustomerID(customer.getCustomerID());
+            response.setCustomerID(customer.getCustomerId());
             response.setCustomerName(customer.getCustomerName());
             response.setCustomerAge(customer.getCustomerAge());
             response.setCustomerEmail(customer.getCustomerEmail());

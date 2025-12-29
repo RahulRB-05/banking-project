@@ -17,8 +17,7 @@ import java.util.Random;
 public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cardId;
-
+    private Integer cardId;
     private String cardNumber;
     private String cardHolderName;
     private int expiryMonth;

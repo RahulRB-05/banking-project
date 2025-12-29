@@ -1,6 +1,4 @@
 package com.example.SenshiProject.entity;
-
-<<<<<<< HEAD
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,7 +17,7 @@ import java.time.LocalDateTime;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-        private Integer customerID;
+        private Integer customerId;
 
         private String  customerName;
         private int   customerAge;
@@ -45,10 +43,4 @@ import java.time.LocalDateTime;
 
 
     }
-=======
-import jakarta.persistence.Entity;
 
-
-public class Customer {
-}
->>>>>>> origin/developer1

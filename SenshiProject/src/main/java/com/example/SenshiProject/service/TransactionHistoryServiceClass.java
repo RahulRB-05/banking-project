@@ -24,19 +24,19 @@ public class TransactionHistoryServiceClass implements TransactionHistoryService
     }
 
     @Override
-    public List<TransactionHistory> getAllTransactions(Long accountId) {
+    public List<TransactionHistory> getAllTransactions(int accountId) {
         accountRepo.findById(accountId).orElseThrow(()->new AccountNotFoundException("User Account Not Found !!!"));
         return transactionRepo.findByAccountId(accountId);
     }
 
     @Override
-    public List<TransactionHistory> getTransactionsByDate(Long accountId, LocalDateTime from, LocalDateTime to) {
+    public List<TransactionHistory> getTransactionsByDate(int accountId, LocalDateTime from, LocalDateTime to) {
         accountRepo.findById(accountId).orElseThrow(()->new AccountNotFoundException("User Account Not Found !!!"));
         return transactionRepo.findByAccountIdAndTransactionDateBetween(accountId,from,to);
     }
 
     @Override
-    public List<TransactionHistory> getTransactionByType(Long accountId, TransactionType type) {
+    public List<TransactionHistory> getTransactionByType(int accountId, TransactionType type) {
         accountRepo.findById(accountId).orElseThrow(()->new AccountNotFoundException("User Account Not Found !!!"));
         return transactionRepo.findByAccountIdAndType(accountId,type);
     }

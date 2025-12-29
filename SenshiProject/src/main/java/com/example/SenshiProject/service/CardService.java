@@ -23,7 +23,7 @@ public class CardService implements CardServiceInterface {
     private AccountRepository accountRepo;
 
     @Override
-    public Card issueCard(Long accountId) {
+    public Card issueCard(int  accountId) {
        Account account= accountRepo.findById(accountId).orElseThrow(()->new AccountNotFoundException("No Account Found"));
 
         CardRequestDTO newCard=new CardRequestDTO();
@@ -37,12 +37,12 @@ public class CardService implements CardServiceInterface {
     }
 
     @Override
-    public List<Card> getCardsByAccount(Long accountId) {
+    public List<Card> getCardsByAccount(int  accountId) {
         return cardRepo.findByAccountId(accountId);
     }
 
     @Override
-    public Card activateCard(Long cardId) {
+    public Card activateCard(int  cardId) {
         Card activateCard=cardRepo.findById(cardId).orElseThrow(()-> new CardNotFoundException("No Card Found"));
         activateCard.setCardStatus(CardStatus.ACTIVE);
 
@@ -50,7 +50,7 @@ public class CardService implements CardServiceInterface {
     }
 
     @Override
-    public Card blockCard(Long cardId) {
+    public Card blockCard(int  cardId) {
         Card blockCard=cardRepo.findById(cardId).orElseThrow(()->new CardNotFoundException("No Card Found"));
         blockCard.setCardStatus(CardStatus.BLOCKED);
 
@@ -58,7 +58,7 @@ public class CardService implements CardServiceInterface {
     }
 
     @Override
-    public Card unblockCard(Long cardId) {
+    public Card unblockCard(int  cardId) {
         Card unblockCard=cardRepo.findById(cardId).orElseThrow(()->new CardNotFoundException("No Card Found"));
         unblockCard.setCardStatus(CardStatus.ACTIVE);
 
@@ -66,7 +66,7 @@ public class CardService implements CardServiceInterface {
     }
 
     @Override
-    public String closeCard(Long cardId) {
+    public String closeCard(int cardId) {
         Card closeCard=cardRepo.findById(cardId).orElseThrow(()->new CardNotFoundException("No Card Found"));
         closeCard.setCardStatus(CardStatus.CLOSED);
 

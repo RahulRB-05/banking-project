@@ -18,17 +18,17 @@ public class TransactionHistoryController {
     private TransactionHistoryServiceInterface transactionService;
 
     @GetMapping("/getAllTransactions")
-    public List<TransactionHistory> allTransactions(@RequestParam Long accountId){
+    public List<TransactionHistory> allTransactions(@RequestParam int accountId){
         return transactionService.getAllTransactions(accountId);
     }
 
     @GetMapping("/getTransactionByType")
-    public List<TransactionHistory> getTransactionsByType(@RequestParam Long accountId,@RequestParam TransactionType type){
+    public List<TransactionHistory> getTransactionsByType(@RequestParam int accountId,@RequestParam TransactionType type){
         return transactionService.getTransactionByType(accountId,type);
     }
 
     @GetMapping("/getTransactionsByDate")
-    public List<TransactionHistory> getTransactionsByDate(@RequestParam Long accountId,String from,String to){
+    public List<TransactionHistory> getTransactionsByDate(@RequestParam int accountId,String from,String to){
         LocalDateTime fromDate=LocalDateTime.parse(from);
         LocalDateTime toDate=LocalDateTime.parse(to);
         return transactionService.getTransactionsByDate(accountId,fromDate,toDate);

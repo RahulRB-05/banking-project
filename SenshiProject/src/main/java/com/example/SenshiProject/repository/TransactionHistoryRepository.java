@@ -11,9 +11,9 @@ import java.util.List;
 @Repository
 public interface TransactionHistoryRepository extends JpaRepository<TransactionHistory,Long> {
 
-    List<TransactionHistory> findByAccountId(Long accountId);
+    List<TransactionHistory> findByAccountId(int accountId);
 
-    List<TransactionHistory> findByAccountIdAndType(Long accountId, TransactionType type);
+    List<TransactionHistory> findByAccountIdAndType(int accountId, TransactionType type);
 
-    List<TransactionHistory> findByAccountIdAndTransactionDateBetween(Long accountId, LocalDateTime from,LocalDateTime to);
+    List<TransactionHistory> findByAccountIdAndTransactionDateBetween(int accountId, LocalDateTime from,LocalDateTime to);
 }

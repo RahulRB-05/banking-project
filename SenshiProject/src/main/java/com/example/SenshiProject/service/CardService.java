@@ -27,7 +27,7 @@ public class CardService implements CardServiceInterface {
        Account account= accountRepo.findById(accountId).orElseThrow(()->new AccountNotFoundException("No Account Found"));
 
         CardRequestDTO newCard=new CardRequestDTO();
-        newCard.setCardHolderName(account.getAccountHolderrName());
+//        newCard.setCardHolderName(account.getAccountHolderrName());
         newCard.setCardType(CardType.DEBIT);
         newCard.setCardStatus(CardStatus.INACTIVE);
         newCard.setAccount(account);

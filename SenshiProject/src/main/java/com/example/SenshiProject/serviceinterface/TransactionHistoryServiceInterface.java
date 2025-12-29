@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface TransactionHistoryServiceInterface {
 
+    void saveHistory(TransactionHistory transactionHistory);
+
     List<TransactionHistory> getAllTransactions(Long accountId);
 
     List<TransactionHistory> getTransactionByType(Long accountId, TransactionType type);

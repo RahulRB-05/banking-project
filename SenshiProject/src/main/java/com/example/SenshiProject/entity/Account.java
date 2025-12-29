@@ -1,11 +1,13 @@
 package com.example.SenshiProject.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,6 +30,9 @@ public class Account {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private List<TransactionHistory> transactionHistory;
 
     public enum AccountStatus{
         ACTIVE,

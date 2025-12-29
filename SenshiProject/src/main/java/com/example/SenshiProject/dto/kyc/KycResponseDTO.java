@@ -14,10 +14,8 @@ import lombok.NoArgsConstructor;
 
 
         private Integer kycId;
-        private String aadhaarNo;
-        private String panNo;
-        private Kyc.KycStatus kycStatus;
-        private Integer customerId;
+        private String kycStatus;
+        private String message;
 
 
 }

@@ -19,6 +19,11 @@ public class TransactionHistoryServiceClass implements TransactionHistoryService
     AccountRepository accountRepo;
 
     @Override
+    public void saveHistory(TransactionHistory transactionHistory) {
+        transactionRepo.save(transactionHistory);
+    }
+
+    @Override
     public List<TransactionHistory> getAllTransactions(Long accountId) {
         accountRepo.findById(accountId).orElseThrow(()->new AccountNotFoundException("User Account Not Found !!!"));
         return transactionRepo.findByAccountId(accountId);

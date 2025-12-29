@@ -1,5 +1,6 @@
 package com.example.SenshiProject.entity;
 
+<<<<<<< HEAD
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -44,3 +45,10 @@ import java.time.LocalDateTime;
 
 
     }
+=======
+import jakarta.persistence.Entity;
+
+
+public class Customer {
+}
+>>>>>>> origin/developer1
